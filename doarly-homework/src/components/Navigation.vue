@@ -4,19 +4,9 @@
       <router-link to="/">Homework</router-link>
     </div>
     <div class="products">
-      <button class="button" v-on:click="onClickHandler">Add Product</button>
       <router-link to="/products">Produse</router-link>
     </div>
   </header>
-  <Teleport v-if="modalClickState === true" to="body">
-    <ProductModal
-      :close="onCloseHandler"
-      title="Add Product"
-      buttonText="Add Product"
-    />
-    <!-- dynamic props -->
-    <!-- props are dynamic (: symbol in front) in vue or static  -->
-  </Teleport>
 </template>
 
 <style scoped>
@@ -88,19 +78,6 @@
 import ProductModal from "./ProductModal.vue";
 
 export default {
-  data() {
-    return {
-      modalClickState: false,
-    };
-  },
-  methods: {
-    onClickHandler() {
-      this.modalClickState = true;
-    },
-    onCloseHandler() {
-      this.modalClickState = false;
-    },
-  },
   components: { ProductModal },
 };
 </script>

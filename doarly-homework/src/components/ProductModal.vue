@@ -114,8 +114,11 @@
 export default {
   props: {
     close: Function,
+    update: Function,
     title: String,
     buttonText: String,
+    added: Boolean,
+    edit: Boolean,
     nume: String,
     cod: String,
     greutate: Number,
@@ -169,7 +172,7 @@ export default {
       this.weight = "";
       this.price = "";
       this.color = "";
-
+      this.update();
       this.close();
     },
     onCloseChild() {
